@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Marvel';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Marvel-Regular.ttf'), url(http://themes.googleusercontent.com/static/fonts/marvel/v3/Hyek-o_5-zlx5kCUxtoev-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+@font-face {
+  font-family: 'Marvel';
+  font-style: normal;
+  font-weight: 700;
+  src: url('Marvel-Bold.ttf'), url(http://themes.googleusercontent.com/static/fonts/marvel/v3/fdSK0BiCsJzg1JgCoZQLEbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Marvel';
+  font-style: italic;
+  font-weight: 400;
+  src: url('Marvel-Italic.ttf'), url(http://themes.googleusercontent.com/static/fonts/marvel/v3/J0cq0OkYfaWW0DXonfLChnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Marvel';
+  font-style: italic;
+  font-weight: 700;
+  src: url('Marvel-BoldItalic.ttf'), url(http://themes.googleusercontent.com/static/fonts/marvel/v3/ZpxYuSK5Q2HHLP6KTdxKxrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+

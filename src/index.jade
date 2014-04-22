@@ -1,0 +1,221 @@
+!!! 5
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title our projects, in the future
+
+    //- Check out 'src/bower_components/prism/themes/' for available themes
+    link(rel='stylesheet', type='text/css', href='bower_components/prism/themes/prism-tomorrow.css')
+
+    link(rel='stylesheet', type='text/css', href='styles/marvel.css')
+    link(rel='stylesheet', type='text/css', href='styles/main.css')
+
+  body
+
+    article
+
+      section
+        h1.lowercase our projects, in the future
+        h2.lowercase apps workweek, toronto 2014
+
+
+      section
+        h2 <a href="http://soledadpenades.com">Soledad Penadés</a>
+        h3.bullet Apps Engineer at <a href="http://mozilla.org">Mozilla</a>
+        ul
+          li <a href="https://twitter.com/supersole">@supersole</a> in Twitter
+          li #apps in irc.mozilla.org
+
+
+      section
+        h1.bullet Back in June 2013...
+        h2.bullet developer ecosystem<br />→ apps engineering
+        h3.bullet but we still <a href="https://wiki.mozilla.org/File:Devbeasts-small.png">&lt;3 devs</a>
+        h3.bullet more focused: help people build apps
+        h3.bullet give them software or good practices
+
+
+
+      section
+        h1.bullet.lowercase Excellent software, no users/contributors = 😢
+        h2.bullet guidelines for successful projects
+
+
+      section
+        h1.bullet Guidelines
+        h2.bullet ~test flight / checklist
+        h2.bullet make it open + get feedback
+        h2.bullet today
+
+
+      section
+        h1.bullet "module owner"
+        h2.bullet who to ask questions
+        h2.bullet who's responsible
+
+
+      section
+        h1.bullet Make projects visible
+        h2.bullet canonical place in the web
+        h3.bullet link from our team page
+        h3.bullet talk, blog, tweet, g+ about it
+
+
+      section
+        h2.bullet Your blog or Hacks blog?
+        h3.bullet Your blog for "work in progress", proofs of concept
+        h3.bullet Moz Hacks for finished projects, releases
+        h3.bullet Consider planets
+
+
+      section
+        h1.bullet Make projects usable
+        h2.bullet A repository of code is not enough
+        h3.bullet You don't learn to drive by looking at a car
+
+
+      section
+        h2 Repository structure
+        code
+          pre.
+            dist/
+            examples/
+            src/
+            tests/
+            .travis.yml
+            CONTRIBUTING.md
+            LICENSE
+            README.md
+
+
+      section
+        h2 README / website
+        ul.bullet
+          li what the project is
+          li how it works
+          li current version + changelog + roadmap
+          li download
+          li communication channels (issues/bugzilla, irc, twitter)
+
+
+      section
+        h2 README / website
+        h3.bullet Accessible English
+        h3.bullet E.g. Mª
+
+
+      section
+        h2 CONTRIBUTING
+        ul.bullet
+          li new branch → PR → dev → master workflow
+          li whitespace, jshint, etc
+
+      section
+        h1.bullet Make quality projects
+        h2.bullet master / dev branches
+        h2.bullet dev → master = stable
+        h3.bullet bump version number
+        h3.bullet blog about it, make noise
+
+
+      section
+        h2.bullet Tests
+        h3.bullet with node.js / headless is better
+
+
+      section
+        h2.bullet Examples
+        ul
+          li At least one example that Just Works™
+          li Ideally they work offline (file:///), no build script required
+
+
+      section
+        h2.bullet New features must include<br />tests + examples + docs
+
+
+      section
+        h1.bullet Make projects community friendly
+        ul
+          li "Not too little, but not too much"
+          li Clear communication channels
+          li convert to-do items as bugs, mark as good-first-bug if need be
+          li make list of bugs VERY visible
+          li respond to bugs in a timely manner
+          li be welcoming to newcomers
+
+
+      section
+        h1.bullet Better the ecosystem
+        h2.bullet Feed back to MDN
+        ul
+          li updating existing pages
+          li creating new pages drawn from your experience
+          li tech writers are here to help you
+
+
+      section
+        h1.bullet Better the ecosystem
+        h2.bullet Improve the platform
+        ul
+          li You'll find oddities
+          li Isolate them
+          li Ensure it's a bug,
+          li and if so... file them
+          li Test in various versions + browsers
+          li Master the art of the minimum test case
+
+
+      section
+        h1.bullet Better the ecosystem
+        h2.bullet Trying new features
+        ul
+          li keep track of relevant umbrella bugs
+          li maybe explore the 'needs-app-triage' flag in bugzilla
+          li help get the weirdnesses fixed before the public stumble upon them
+          li friendly polite stubborness
+          li tests and examples are more convincing than 'bumping' bugs
+
+
+      section
+        h2 In short
+        ul.bullet
+          li Module owner
+          li Make projects visible
+          li Make projects usable
+          li Make quality projects
+          li Make projects community friendly
+          li Better the ecosystem
+
+
+      section
+        h1.bullet Two seeds
+
+
+      section
+        h1.bullet An idea
+        h2.bullet Can we build an ACID test for this?
+
+
+      section
+        h1.bullet A proposal
+        h2.bullet Try to be the open source dev you'd like to see
+
+
+      section
+        h1.bullet It will be awesome!
+
+      section
+        h1.noem 👏🌞😎🌴🍹🎉📻🎶
+
+
+
+    script(src='bower_components/bespoke.js/dist/bespoke.min.js')
+    script(src='bower_components/bespoke-bullets/dist/bespoke-bullets.min.js')
+    script(src='bower_components/bespoke-scale/dist/bespoke-scale.min.js')
+    script(src='bower_components/bespoke-hash/dist/bespoke-hash.min.js')
+    script(src='bower_components/bespoke-progress/dist/bespoke-progress.min.js')
+    script(src='bower_components/bespoke-state/dist/bespoke-state.min.js')
+    script(src='bower_components/prism/prism.js')
+    script(src='scripts/main.js')

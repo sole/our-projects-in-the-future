@@ -1,0 +1,245 @@
+@import 'nib' // CSS3 extensions for Stylus: http://visionmedia.github.io/nib/
+
+// variables!
+
+mozilla_orange = orange
+firefox_blue = #0095dd
+bg_gradient = #333
+
+slide_width = 100% //640px
+slide_height = 640px // 480px
+
+slide_transition_length = .4s
+slide_transition_easing = ease
+slide_transition_rotate_y = 0deg
+slide_transition_translate_z = 0
+// Safari bugs out on 3d transform-origins, so we have to fake it
+slide_transition_nudge_x = -100px
+
+bullet_transition_length = .2s
+bullet_transition_easing = ease
+bullet_transition_translate_x = 0
+
+// base
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+@media print
+  *
+    -webkit-print-color-adjust: exact
+
+@page
+  size: landscape
+  margin: 0
+
+// bespoke.js layout styles
+
+article
+  transition: background slide_transition_length slide_transition_easing
+  display: none
+  &.bespoke-parent
+    display: block
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    overflow: hidden
+    @media print
+      overflow: visible
+      position: static
+    perspective: 600px
+
+.bespoke-slide
+  transition:
+    transform slide_transition_length slide_transition_easing,
+    opacity slide_transition_length slide_transition_easing,
+    background slide_transition_length slide_transition_easing
+  transform-origin: 50% 50% 0
+  backface-visibility: hidden
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  width: slide_width
+  height: slide_height
+  position: absolute
+  top: 50%
+  margin-top: (slide_height / 2) * -1
+  left: 50%
+  margin-left: (slide_width / 2) * -1
+  padding: 1rem
+  border-radius: 0
+  @media print
+    zoom: 1 !important // disable bespoke-scale
+    height: 743px // seems to correspond with an A4, landscape page height
+    width: 100%
+    page-break-before: always
+    position: static
+    margin: 0
+
+.bespoke-before
+  transform: translateX(slide_transition_nudge_x * -1) translateX(slide_width / -2) rotateY(slide_transition_rotate_y * -1) translateX(slide_width / -2)
+
+.bespoke-after
+  transform: translateX(slide_transition_nudge_x) translateX(slide_width / 2) rotateY(slide_transition_rotate_y) translateX(slide_width / 2)
+  @media print
+    transform: none
+
+.bespoke-inactive
+  opacity: 0
+  pointer-events: none
+  @media print
+    opacity 1
+
+.bespoke-active
+  opacity: 1
+
+// bespoke-bullet styles
+
+.bespoke-bullet
+  transition: all bullet_transition_length bullet_transition_easing
+
+.bespoke-bullet-inactive
+  opacity: 0
+  li&
+    //transform: translateX(bullet_transition_translate_x)
+  @media print
+    opacity: 1
+
+.bespoke-bullet-active
+  opacity: 1
+
+// bespoke-scale styles
+
+.bespoke-scale-parent
+  perspective: 600px
+  //position: absolute
+  //top: 0
+  position: relative
+  top: 50%
+  left: 0
+  right: 0
+  bottom: 0
+  @media print
+    transform: none !important
+
+// bespoke-progress styles
+
+.bespoke-progress-parent
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 2px
+  @media only screen and (min-width: 1366px)
+    height: 4px
+  @media print
+    display: none
+
+.bespoke-progress-bar
+  transition: width .6s ease
+  position: absolute
+  height: 100%
+  background: firefox_blue
+  border-radius: 0 4px 4px 0
+
+// bespoke-state styles
+
+.emphatic,
+.emphatic .bespoke-slide
+  background: bg_gradient
+
+// prism styles
+
+code
+  display: block // fixes flexbox rendering issues in Safari
+  padding: 26px !important
+
+// content styles
+
+body
+  font-family: 'Marvel', Helvetica, arial, sans-serif
+  font-size: 18px
+  color: white
+  background: bg_gradient
+  font-size: 2rem
+
+h1
+  font-size: 120px
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1
+  margin-bottom: 16px
+  color: white
+  background: orange
+  text-transform: uppercase
+
+
+h2
+  font-size: 80px
+  font-style: italic
+  margin-bottom: 8px
+  background: firefox_blue
+  color: #fff
+  text-transform: uppercase
+
+h1 a, h2 a
+  color: #fff
+
+
+h1, h2
+  text-shadow: 1px 1px 0px black;
+  padding: 0.5rem 0.9rem
+
+h1 em, h2 em
+  font-style: normal
+
+.lowercase
+    text-transform: lowercase
+
+.noem
+	font-style: normal
+
+h3
+  font-size: 36px
+  font-weight: normal
+  font-style: italic
+  margin-bottom: 24px
+  text-transform: uppercase
+
+hr
+  visibility: hidden
+  height: 20px
+
+ul
+  list-style: none
+
+li
+  margin-bottom: 12px
+
+p
+  margin: 0 100px 12px
+  line-height: 22px
+
+a
+  color: mozilla_orange
+  text-decoration: none
+
+a:after
+    content: "↗";
+    font-weight: normal
+    line-height: 0.1
+    vertical-align: super
+
+img
+  width: auto
+  height: 100%
+
+.quote
+  font-style: italic
+  font-weight: normal
